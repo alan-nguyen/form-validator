@@ -4,6 +4,14 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 
+// Show input error message
+function showError(input, message) {
+  const formControl = input.parentElement;
+  formControl.className = 'form-control error';
+  const small = formControl.querrySelector('small');
+  small.innerText = message;
+}
+
 // Event listeners
 form.addEventListener('submit', function (e) {
   e.preventDefault();
