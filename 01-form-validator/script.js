@@ -56,6 +56,13 @@ function checkLength(input, min, max) {
   }
 }
 
+// Check passwords match
+function checkPasswordsMatch(input1, input2) {
+  if (input1.value !== input2.value) {
+    showError(input2, 'Password do not match');
+  }
+}
+
 // Get field name
 function getFieldName(input) {
   return input.id.charAt(0).toUpperCase() + input.id.slice(1);
