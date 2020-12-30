@@ -35,9 +35,14 @@ function checkRequired(inputArr) {
   });
 }
 
+// Get field name
+function getFieldName(input) {
+  return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+}
+
 // Event listeners
 form.addEventListener('submit', function (e) {
   e.preventDefault();
 
-  checkRequired([usernam, email, password, password2]);
+  checkRequired([username, email, password, password2]);
 });
