@@ -8,7 +8,7 @@ const password2 = document.getElementById('password2');
 function showError(input, message) {
   const formControl = input.parentElement;
   formControl.className = 'form-control error';
-  const small = formControl.querrySelector('small');
+  const small = formControl.querySelector('small');
   small.innerText = message;
 }
 
@@ -33,16 +33,21 @@ form.addEventListener('submit', function (e) {
   } else {
     showSuccess(username);
   }
+
   if (email.value === '') {
     showError(email, 'Email is required');
+  } else if (!isValidEmail(email.value)) {
+    showError(email, 'Email is not valid');
   } else {
     showSuccess(email);
   }
+
   if (password.value === '') {
     showError(password, 'Password is required');
   } else {
     showSuccess(password);
   }
+
   if (password2.value === '') {
     showError(password2, 'Password is required');
   } else {
